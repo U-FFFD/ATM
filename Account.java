@@ -1,6 +1,6 @@
 /* Owen Monsma
    CS361
-   Lab 4
+   15 February 2017
 */
 
 public class Account {
@@ -26,7 +26,7 @@ public class Account {
     return this.balance += amount;
   }
 
-  public int withdraw(int amount) {
+  public int withdraw(int amount) throws Exception{
     if (this.balance >= amount) {
       return this.balance -= amount;
     }
