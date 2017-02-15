@@ -4,6 +4,8 @@ public class Bank {
 	
 	private HashMap<String, Account> Accounts = new HashMap<String,Account>();
 	
+	public Bank()
+	
 	public void createAccount(String accountNum, String accountPin, int balance) {
 		Account a = new Account(accountNum, accountPin, balance);
 		Accounts.put(accountNum, a);
