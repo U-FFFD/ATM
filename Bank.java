@@ -2,9 +2,11 @@ import java.util.HashMap;
 
 public class Bank {
 	
-	private HashMap<String, Account> Accounts = new HashMap<String,Account>();
+	private HashMap<String, Account> Accounts;
 	
-	public Bank()
+	public Bank() {
+		Accounts = new HashMap<String,Account>();
+	}
 	
 	public void createAccount(String accountNum, String accountPin, int balance) {
 		Account a = new Account(accountNum, accountPin, balance);
