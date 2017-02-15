@@ -9,12 +9,14 @@ class ATM{
   private boolean validated;
 
   public ATM(){
-    theBank = new Bank();
+    this(new Bank);
   }
 
   public ATM(Bank bank){
     // Shell and test: create bank with test cases and pass using this constructor
     theBank = bank;
+    currAccount = null;
+    validated = false;
   }
 
   public boolean cardInserted(String accountNum){
