@@ -22,6 +22,7 @@ public class BSim{
 	
 	public void execute()
 	{
+		scan = new Scanner(System.in);
 		outerloop: for (int i =0; i <3; i++)	//3 attempts for account number
 		{
 			System.out.println("Enter an account number");
@@ -31,6 +32,7 @@ public class BSim{
 			{
 				for(int x = 0; x < 3; x++)	//3 attempts for PIN number
 				{
+					scan = new Scanner(System.in);
 					System.out.println("Enter your PIN number");
 					pin = scan.nextLine();
 					
@@ -77,13 +79,21 @@ public class BSim{
 		{
 			for(int attempts = 0; attempts < 3; attempts++)	//Only allows 3 attempts from user
 			{
+				scan = new Scanner(System.in);
 				System.out.println("Enter 'D' to deposit cash, or 'W' to withdraw cash");
 				String input = scan.nextLine();
 				
 				if(input.equals("W") || input.equals("w"))	//upper or lowercase to withdraw
 				{
 					System.out.println("Enter the amount to withdraw");
+					
+					try{
 					value = scan.nextInt();
+					}
+					catch(Exception e)
+					{
+					value = -1; //This will eventually print "invalid input, try again" in last if block
+					}
 					
 					try	//Attempt withdrawal, throw exception if it fails because of balance
 					{
@@ -106,7 +116,13 @@ public class BSim{
 				if(input.equals("D") || input.equals("d"))	//upper or lowercase to deposit
 				{
 					System.out.println("Enter the amount to deposit");
+					try{
 					value = scan.nextInt();
+					}
+					catch(Exception e)
+					{
+					value = -1; // This will eventually print "Invalid input, try again" by going to next if block
+					}
 					
 					if(value >= 0)		//Make sure user input isn't negative
 					{
@@ -125,8 +141,6 @@ public class BSim{
 						System.out.println("Too many invalid inputs, ending...");
 						break;
 				}
-				
-				
 			}
 		System.out.println("Current balance: " + balance);
 		}	
