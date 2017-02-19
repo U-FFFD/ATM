@@ -100,7 +100,14 @@ public class BSim{
 						if(value >= 0)		//Make sure user input isnt negative
 						{
 						balance = atm.withdraw(value);
-						System.out.println("Amount withdrawn: " + value);
+							if(value <= balance) //only prints if the withdrawal was successful
+							{
+							System.out.println("Amount withdrawn: " + value);
+							}
+							else
+							{
+							System.out.println("Amount attempted to withdraw: " + value);
+							}
 						break;
 						}
 					}
