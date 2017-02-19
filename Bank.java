@@ -2,20 +2,20 @@ import java.util.HashMap;
 
 public class Bank {
 	
-	private HashMap<String, Account> Accounts;
+	private HashMap<String, Account> accounts;
 	
 	public Bank() {
-		Accounts = new HashMap<String,Account>();
+		accounts = new HashMap<String,Account>();
 	}
 	
 	public void createAccount(String accountNum, String accountPin, int balance) {
 		Account a = new Account(accountNum, accountPin, balance);
-		Accounts.put(accountNum, a);
+		accounts.put(accountNum, a);
 	}
 	
 	public Account validate(String accountNum) {
-		if(Accounts.containsKey(accountNum)) {
-			return Accounts.get(accountNum);
+		if(accounts.containsKey(accountNum)) {
+			return accounts.get(accountNum);
 		}
 		return null;
 	}
