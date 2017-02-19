@@ -135,7 +135,8 @@ public class BSim{
 		public static void main(String args[])
 		{
 			Bank myBank = new Bank();
-			myBank.createAccount("1234", "9917", 10000);
+			myBank.createAccount("1234", "6789", 80);
+			myBank.createAccount("6789", "4321", 60);
 			ATM theFitchATM = new ATM(myBank);
 			BSim bsim = new BSim(theFitchATM);
 			bsim.execute();
