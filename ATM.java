@@ -49,6 +49,16 @@ class ATM{
     }
     return -1;
   }
+   
+  public int getBalance() {
+	  if (validated) {
+		  return currAccount.getBalance();
+	  }
+	  else {
+		//balance could be negative so safest to return 0 on invalid account
+		  return 0; 
+	  }
+  }
 
   public int deposit(int amount){
     // deposits amount. Returns new balance (-1 on invalid)
