@@ -2,6 +2,7 @@
    CS361
    15 February 2017
 */
+// eddited by Emmett W
 class ATM{
   private static Bank theBank;
 
@@ -9,7 +10,7 @@ class ATM{
   private boolean validated;
 
   public ATM(){
-    this(new Bank);
+    this(new Bank());
   }
 
   public ATM(Bank bank){
@@ -23,13 +24,13 @@ class ATM{
     // validates with Bank that the account number is valid
     currAccount = theBank.validate(accountNum);
     // returns whether account exists
-    return (this.account != null);
+    return (this.currAccount != null);
   }
 
   public boolean checkPin(String pin){
     // checks the inputted PIN
     if (currAccount != null){
-      return validated = currAccount.validatePin(pin);
+      return validated = currAccount.validate(pin);
     }
     else{
       return validated = false;
@@ -57,7 +58,7 @@ class ATM{
     return -1;
   }
 
-  private void close(){
+  public void close(){
     // closes connection to the account
     this.currAccount = null;
     this.validated = false;
