@@ -2,8 +2,13 @@ import java.util.Scanner;
 import java.io.File;
 
 public class Simulator{
-  public Simulator(){
+  private ATM atm;
 
+  public Simulator(){
+    Bank theBank = new Bank();
+    theBank.createAccount("1234", "6789", 80);
+    theBank.createAccount("6789", "4321", 60);
+    atm = new ATM(theBank);
   }
 
   public void run(){
@@ -18,8 +23,8 @@ public class Simulator{
         break;
       default:
         try{
-          in = new Scanner (new File(filename));
           System.out.println("Running file " + filename);
+          parseTextFile(new File(filename);
         } catch (Exception e){
           System.out.println("File not found. Starting in manual mode.");
         }
@@ -32,6 +37,15 @@ public class Simulator{
       //TODO: Take in user input, and send this input to the ATM via atm.parse()
     }
 
+  }
+
+  private void parseTextFile(file){
+    Scanner in = new Scanner(file);
+
+    while (in.hasNextLine()){
+      String response = atm.parse(in.nextLine());
+      parseCommand(response);
+    }
   }
 
   private void parseCommand(String command)
