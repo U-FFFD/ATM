@@ -20,22 +20,22 @@ public class Simulator{
     switch (filename){
       case "":
         System.out.println("Starting in manual mode.");
+        self.manualMode();
         break;
       default:
         try{
           System.out.println("Running file " + filename);
-          parseTextFile(new File(filename);
+          self.parseTextFile(new File(filename);
         } catch (Exception e){
           System.out.println("File not found. Starting in manual mode.");
+          self.manualMode();
         }
         break;
     }
+  }
 
-    // main simulation loop
-
-    while (in.hasNextLine()) {
-      //TODO: Take in user input, and send this input to the ATM via atm.parse()
-    }
+  private void manualMode(){
+    //TODO: take strings from stdin and send to atm.parse(), handle responses
 
   }
 
