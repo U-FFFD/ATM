@@ -28,8 +28,15 @@ public class Simulator{
 
     // main simulation loop
 
-    while 
+    while (in.hasNextLine()) {
+      //TODO: Take in user input, and send this input to the ATM via atm.parse()
+    }
 
+  }
+
+  private void parseCommand(String command)
+  {
+    //TODO: Parse the command sent in from the ATM, and print to console
   }
 
   public static void main (String args[]){
