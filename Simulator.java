@@ -50,7 +50,15 @@ public class Simulator{
 
   private void parseCommand(String command)
   {
-    //TODO: Parse the command sent in from the ATM, and print to console
+    //Parse the command sent in from the ATM, and print to console
+    if (input.indexOf("DIS") == 0) {
+		  int end = input.indexOf("\"");
+		  System.out.println(input.substring(4,end));
+	  }
+	  else if (input.indexOf("PRINT") == 0) {
+		  int end = input.indexOf("\"");
+		  System.out.println(input.substring(6, end));
+	  }
   }
 
   public static void main (String args[]){
