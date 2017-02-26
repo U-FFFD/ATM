@@ -35,8 +35,14 @@ public class Simulator{
   }
 
   private void manualMode(){
-    //TODO: take strings from stdin and send to atm.parse(), handle responses
-
+    //take strings from stdin and send to atm.parse(), handle responses
+     Scanner in = new Scanner(System.in);
+     String response = in.nextLine();
+	  
+      while(!response.equals("CANCEL")){
+      atm.parse(response);
+      parseCommand(response);
+      }
   }
 
   private void parseTextFile(file){
